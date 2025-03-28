@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: $primary-font;
+  background-image: url('./images/background.webp');
+  @include background-cover;
+  color: $color-secondary;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    font-size: $font-size-small;
+  }
+}
+
+main {
+  flex: 1;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: $background-transparent-black;
+  color: $color-secondary;
+  font-size: $font-size-small;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-md;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}

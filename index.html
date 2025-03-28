@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Lucas Lanoue</title>
+    <link rel="stylesheet" href="/dist/main.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1 class="active" onclick="switchTab('projects')">Projets</h1>
+            <h2 class="inactive" onclick="switchTab('medias')">Medias</h2>
+        </div>
+        <nav class="header-right">
+            <img src="/images/loupe.png" alt="Loupe" title="Recherche">
+            <img id="settings-button" src="/images/rouage.png" alt="Paramètres" title="Paramètres" onclick="toggleBackgroundSelector()">
+            <img id="smiley-image" src="/images/smiley.png" alt="Smiley" title="Smiley" onclick="showInfoOverlay()">
+            <span id="heure"></span>
+        </nav>
+        <div id="background-selector" class="background-selector" style="display: none;">
+            <button onclick="changeBackground('./images/background1.webp')">Fond 1</button>
+            <button onclick="changeBackground('./images/background2.jpeg')">Fond 2</button>
+            <button onclick="changeBackground('./images/background3.jpg')">Fond 3</button>
+            <button onclick="changeBackground('./images/background4.jpg')">Fond 4</button>
+        </div> 
+        <div id="info-overlay" class="info-overlay" style="display: none;">
+            <div class="info-grid">
+                <div class="info-item">Nom : Lucas Lanoue</div>
+                <div class="info-item">Âge : 25 ans</div>
+                <div class="info-item">Ville : Paris</div>
+                <div class="info-item">Profession : Développeur Web</div>
+            </div>
+            <button onclick="hideInfoOverlay()">Fermer</button>
+        </div>
+    </header>
+    <main>
+        <section class="projects active">
+            <div class="project-icon" onclick="updateProjectInfo('project1')">
+                <img src="/images/project1.png" alt="Projet 1">
+                <div class="project-details">
+                    <h3>To Do List</h3>
+                </div>
+            </div>
+            <div class="project-icon">
+                <img src="/images/project2.png" onclick="updateProjectInfo('project2')">
+                <div class="project-details" alt="Projet 2">
+                    <h3>Challenge Web</h3>
+                </div>
+            </div>
+        </section>
+        <div class="info-container" id="info-container">
+                <div class="info-column">
+                    <div class="info-block large">
+                        <p>Langages utilisés: HTML, CSS, JavaScript</p>
+                    </div>
+                <div class="info-block small">
+                    <p>Repository Git: <a href="https://github.com/Csolatus/cliUnix" target="_blank">Lien</a></p>
+                </div>
+            </div>
+            <div class="info-column">
+                <div class="info-block small">
+                    <p>Temps de travail: 20 heures</p>
+                </div>
+                <div class="info-block large">
+                    <p>Statut: Terminé</p>
+                </div>
+            </div>
+        </div>
+        <div class="medias">
+                <a href="https://www.linkedin.com/in/lucas-lanoue-6b9215330/" target="_blank" class="media-icon">
+                    <img src="/images/linkedin.svg.png" alt="LinkedIn">
+                    <div class="media-details">Linkedin</div>
+                </a>
+            <a href="https://github.com/Csolatus?tab=repositories" target="_blank" class="media-icon">
+                <img src="/images/github.png" alt="GitHub">
+                <div class="media-details"></div>
+            </a>
+    </main>
+    <footer>
+        <p>&copy; 2025 Lanoue Lucas</p>
+    </footer>
+</body>
+</html>
